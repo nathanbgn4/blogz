@@ -1,0 +1,16 @@
+.indextext{
+    padding: 15px;
+    text-align: center;
+    font-size: 30px;
+}
+
+.formstyle{
+    margin: 0 auto;
+    padding: 15px;
+    align-content: center;
+    display: block;
+}
+
+.error{
+    color: red;
+}

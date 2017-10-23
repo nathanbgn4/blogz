@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href='{{ url_for('static', filename='styles.css')}}'>
+    </head>
+    <script type='text/javascript'>    
+      
+    </script>
+    
+    <body>
+        <div style='text-align: left; font-size: 20px;'>
+            <a href="/">Home</a>&emsp;<a href="/allposts">All posts</a>&emsp;<a href="/newpost">Make a new post</a>
+        </div>
+        
+        <div style='text-align: right; font-size: 20px;'>
+        
+                {% if loggedin %}
+                    <a href="/logout">Logout</a>
+                {% else %}
+                    <a href="/login">Login</a>&emsp;<a href="/signup">Register</a>
+                {% endif %}
+        </div>
+
+        <body>
+
+            {% block content %}
+            {% endblock %}
+        </body>
+        
+    </body>
+</html>

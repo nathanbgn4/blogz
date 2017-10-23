@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div>
+        <h2>{{user.username}}</h2>
+    </div>
+    {% if posts|length == 0 %}
+        <hr />
+            <p class='indextext'>No blog posts yet. :(</p>
+        <hr />
+    {% else %}
+        {% for post in posts %}
+            <div class='indextext' >
+                <hr />
+                <a href="/blogentry/?id={{post.id}}" style='font-size:20px;'>{{post.blogtitle}}</a>
+                <p>{{post.blogbody}}</p>
+            </div>
+        {% endfor %}
+    {% endif %}
+{% endblock %}

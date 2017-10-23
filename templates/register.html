@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h2 class='indextext'>Register User</h2>
+    <div class='formstyle'>
+        <form action='/registerlogic' method='POST'>
+            <span class='error'>{{error}}</span>
+            <h3>Username</h3>
+            <input name='newusername' type='text' value=''>
+            <h3>Password</h3>
+            <input name='newpassword' type='password' value=''>
+            <h3>Verify Password</h3>
+            <input style='margin-bottom: 10px;' name='verifypass' type='password' value=''>
+
+            <input type=submit value='Register' style="display: block; margin: auto;">
+        </form>
+    </div>
+{% endblock %}

@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h2 class='indextext'>Login User</h2>
+    <div>
+        <form action='/loginlogic' method='POST'class='formstyle'>
+            <span class='error'>{{error}}</span>
+            <h3>Username</h3>
+            <input name='username' type='text' value=''>
+            <h3>Password</h3>
+            <input name='password' type='password' value='' style='margin-bottom: 10px;'>
+
+            <input type=submit value='Login' style="display: block; margin: auto;">
+        
+
+
+
+            
+            <p>New user? Create account <a href="/signup">here.</a></p>
+        </form>
+    </div>
+{% endblock %}

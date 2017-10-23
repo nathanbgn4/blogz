@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+    <h2 class='indextext'>All Posts</h2>
+
+    {% if posts|length == 0 %}
+        <hr />
+            <p class='indextext'>No blog posts yet. :(</p>
+        <hr />
+
+    {% else %}
+        {% for post in posts %}
+        <div class='indextext' >
+            <hr />
+                <a href="/blogentry?id={{post.id}}" style='font-size:20px;'>{{post.title}}</a>
+                <p>{{post.body}}</p>
+        </div>
+        {% endfor %}
+    {% endif %}
+{% endblock %}
