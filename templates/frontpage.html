@@ -11,7 +11,7 @@
     {% else %}
         {% for user in users %}
             <div class='indextext'>
-                <a href="/user?userID={{user.userID}}" style='font-size:20px; text-align: center;'>{{user.userID}}</a>
+                <a href="/singleuser?userID={{user.userID}}" style='font-size:20px; text-align: center;'>{{user.username}}</a>
             </div>
         {% endfor %}
     {% endif %}

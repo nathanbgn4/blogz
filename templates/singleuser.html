@@ -2,7 +2,7 @@
 
 {% block content %}
     <div>
-        <h2>{{user.username}}</h2>
+        <h2>{{username}}</h2>
     </div>
     {% if posts|length == 0 %}
         <hr />
@@ -12,8 +12,8 @@
         {% for post in posts %}
             <div class='indextext' >
                 <hr />
-                <a href="/blogentry/?id={{post.id}}" style='font-size:20px;'>{{post.blogtitle}}</a>
-                <p>{{post.blogbody}}</p>
+                <a href="/blogentry?id={{post.id}}" style='font-size:20px;'>{{post.title}}</a>
+                <p>{{post.body}}</p>
             </div>
         {% endfor %}
     {% endif %}

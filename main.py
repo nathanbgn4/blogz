@@ -71,19 +71,25 @@ def newpostlogic():
     db.session.commit()
     return render_template('/blogentry?id='+str(post.id), loggedin=logged_in)
 
+@app.route('/singleuser', methods=['GET'])
+def singleuser():
+    global logged_in
+    userid = request.args.get('userID')
+    user = Users.query.filter_by(userID=userid).first()
+    posts = Posts.query.filter_by(userID=user.userID).all()
+    return render_template('singleuser.html', posts=posts, loggedin=logged_in, username=user.username)
+
 @app.route('/user', methods=['GET'])
 def mainblog():
     global logged_in
-    userid = request.args.get('username')
-    posts = Posts.query.filter_by(userID=user.userID).all()
-    return render_template('/user?userID=' + str(user.userID), posts=posts, loggedin=logged_in, username=userid.username)
+    return render_template('/singleuser')
 
 @app.route('/blogentry', methods=['GET'])
 def postclicked():
     global logged_in
     postid = request.args.get('id')
-    post = Posts.query.filter_by(id=postid).first()
-    return render_template('entry.html', post=post, loggedin=logged_in)
+    posts = Posts.query.filter_by(id=postid).first()
+    return render_template('entry.html', posts=posts, loggedin=logged_in)
 
 @app.route('/signup', methods=['GET'])
 def register():
